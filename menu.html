@@ -23,7 +23,7 @@
             </div>
         </nav>
     </header>
-    
+<main>
     <div class="recommend-list" style="margin-top:120px; display: flex; flex-direction: column; align-items: flex-start;">
         <h1>Menu</h1>
         <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
@@ -82,58 +82,60 @@
         <h1>Combo</h1>
         <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
             <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/combo1.jpg" alt="Combo 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Set 1</h3>
-            <h4>100,000₫</h4>
-            <p>Traditional fried chicken</p>
-            <a href="Set1.html" class="recommend-btn">Order</a>
-        </div>
-        <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/combo2.jpg" alt="Combo 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Set 2</h3>
-            <h4>120,000₫</h4>
-            <p>Fried chicken with a variety of sauces</p>
-            <a href="Set2.html" class="recommend-btn">Order</a>
-        </div>
-        <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/combo3.jpg" alt="Combo 3" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Set 3</h3>
-            <h4>130,000₫</h4>
-            <p>Chicken + French fries</p>
-            <a href="Set3.html" class="recommend-btn">Order</a>
-        </div>
-        <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/combo4.jpg" alt="Combo 4" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Set 4</h3>
-            <h4>140,000₫</h4>
-            <p>Chicken + Spicy noodles</p>
-            <a href="Set4.html" class="recommend-btn">Order</a>
-        </div>
-        <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/combo5.jpg" alt="Combo 5" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Set 5</h3>
-            <h4>120,000₫</h4>
-            <p>Chicken + Spaghetti</p>
-            <a href="Set5.html" class="recommend-btn">Order</a>
-        </div>
+                <img src="image/combo1.jpg" alt="Combo 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Set 1</h3>
+                <h4>100,000₫</h4>
+                <p>Traditional fried chicken</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Set 1 - Traditional fried chicken', price: 100000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo2.jpg" alt="Combo 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Set 2</h3>
+                <h4>120,000₫</h4>
+                <p>Fried chicken with a variety of sauces</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Set 2 - Fried chicken with sauces', price: 120000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo3.jpg" alt="Combo 3" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Set 3</h3>
+                <h4>130,000₫</h4>
+                <p>Chicken + French fries</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Set 3 - Chicken + French fries', price: 130000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo4.jpg" alt="Combo 4" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Set 4</h3>
+                <h4>140,000₫</h4>
+                <p>Chicken + Spicy noodles</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Set 4 - Chicken + Spicy noodles', price: 140000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo5.jpg" alt="Combo 5" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Set 5</h3>
+                <h4>120,000₫</h4>
+                <p>Chicken + Spaghetti</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Set 5 - Chicken + Spaghetti', price: 120000})">Order</button>
+            </div>
         </div>
         <h1>Special Sets</h1>
         <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
             <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/specialset1.jpg" alt="Special Set 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Special set 1</h3>
-            <p>Chicken + French fries + Spaghetti</p>
-            <a href="Specialset1.html" class="recommend-btn">Order</a>
+                <img src="image/specialset1.jpg" alt="Special Set 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Special set 1</h3>
+                <h4>150,000₫</h4>
+                <p>Chicken + French fries + Spaghetti</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Special set 1 - Chicken + French fries + Spaghetti', price: 0})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/specialset2.jpg" alt="Special Set 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Special set 2</h3>
+                <h4>150,000₫</h4>
+                <p>Chicken + French fries + Noodles</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Special set 2 - Chicken + French fries + Noodles', price: 0})">Order</button>
+            </div>
         </div>
-        <div class="recommend-card" style="margin: 12px auto;">
-            <img src="image/specialset2.jpg" alt="Special Set 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
-            <h3>Special set 2</h3>
-            <p>Chicken + French fries + Noodles</p>
-            <a href="Specialset2.html" class="recommend-btn">Order</a>
         </div>
-        </div>
-        </div>
-        
+</main> 
     </div>
     <footer>
         <div class="footer-container">
