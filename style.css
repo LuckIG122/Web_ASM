@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffaa00;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/*****************************************************/
+/*                    LOGIN PAGE                     */
+/*****************************************************/
+
+/* background login form */
+.signin-signup-container {
+    background: linear-gradient(to right, #ff8c34, #f5b02f);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* form login */
+.signin-signup-container .form-signin-signup {
+    background: linear-gradient(to right, #ffdc12, #fda604);
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signin-signup-container .form-signin-signup a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.signin-signup-container .form-signin-signup a:hover {
+    color:#9e9e9e;
+    text-decoration: none;
+}
+
+.signin-signup-container .form-signin-signup p {
+    margin-top: 15px;
+    color: #fff;
+}
+
+/* Sign In to Your Account */
+.signin-signup-container .form-signin-signup h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Input Fields */
+.signin-signup-container .form-signin-signup input[type="text"],
+.signin-signup-container .form-signin-signup input[type="email"],
+.signin-signup-container .form-signin-signup input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Email label */
+.input-group label {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Password label */
+.signin-signup-container .password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signin-signup-container .password-label label {
+    flex: 1; 
+    text-align: left;
+}
+
+.signin-signup-container .password-label a {
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+/* Common label in background login form*/
+.signin-signup-container label {
+    margin-bottom: 5px;
+}
+
+
+/* Submit button */
+.signin-signup-container .form-signin-signup input[type="submit"] {
+    background-color: #ff9100;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Animation button hover */
+.signin-signup-container .form-signin-signup input[type="submit"]:hover {
+    background: linear-gradient(to right, #525252, #959595);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.signin-signup-container .form-signin-signup input[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+/*****************************************************/
+/*                 HEADER NAVIGATION                 */
+/*****************************************************/
+.nav_container {
+    background: linear-gradient(to right, #fbbb0a, #ff8000);
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    color: #fff;
+    padding: 0px 20px;
+}
+
+/* Logo  */
+.nav_container .logo img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* navigation */
+.nav_list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav_list li {
+    display: block;
+}
+
+.nav_list a {
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.nav_list a:hover {
+    background-color: #ffb300; 
+}
+.nav_list ul {
+    display: none;
+    position: absolute;
+    background-color: #ff9500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.nav_list ul ul li { 
+    width: 170px; 
+    position: relative; 
+    display: block; 
+} 
+
+.nav_list ul li a {
+    padding: 10px 15px;
+    line-height: 1.6;
+    display: block;
+}
+
+.nav_list li:hover > ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.nav_list li:hover .arrow {
+    transform: rotate(0deg);
+}
+
+
+/* login sign up button */
+.login_signup a {
+    background-color: #ff8c11;
+    color: #fff;
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 90px;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100px;
+    text-align: center;
+    line-height: 38px;
+    transition: all 0.3s ease;
+}
+
+.login_signup a:hover {
+    border: 1px solid #ff8800;
+    background-color: #ff8800;
+}
+
+/*****************************************************/
+/*                      FOOTER                      */
+/*****************************************************/
+.footer-container {
+    background: #ff8000;
+    color: #fff;
+    padding: 30px 0 20px 0;
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.footer-social a {
+    color: #fff;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+/*****************************************************/
+/*                      MAIN                        */
+/*****************************************************/
+.main-banner {
+    width: 100%;
+    background: #ff8f18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 0;
+    min-height: 220px;
+}
+
+.banner-text {
+    padding-left: 6vw;
+    padding-right: 4vw;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    color: #ffffff;
+    text-align: left;
+    max-width: 700px;
+}
+
+.banner-text h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.banner-text p {
+    font-size: 1.9rem;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+
+.main-categories {
+    background: #fff !important;
+    padding: 30px 0 40px 0;
+    text-align: center;
+}
+
+.main-categories h2 {
+    color: #222;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/*****************************************************/
+/*                      MENU                         */
+/*****************************************************/
+
+.recommend-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 10px;
+    margin: 10px;
+}
+
+.recommend-list h1 {
+    display: block;
+    width: 100%;
+    margin-left: 12px;
+    font-size: 3.0rem;
+}
+
+.recommend-list div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recommend-card {
+    background: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+    border: 2px solid #fcdab8;
+    justify-content: space-between;
+}
+
+.recommend-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+    background: #fff6e2;
+    color: #fff;
+}
+
+.recommend-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.recommend-card p {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 18px;
+}
+
+.recommend-btn {
+    background: #ffb300;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.recommend-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+.main-menu h2 {
+    color: #222;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.Menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.Menu-card {
+    background: linear-gradient(135deg, #222 60%, #444 100%);
+    color: #ffffff;
+    padding: 22px 38px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.Menu-card:hover {
+    background: linear-gradient(135deg, #444 60%, #111 100%);
+    color: #fff;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+
+/*****************************************************/
+/*               ShoppingCart                        */
+/*****************************************************/
+
+/*****************************************************/
+/*                   bill                             */
+/*****************************************************/
+
+.invoice {
+    width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.invoice h1 {
+    text-align: center;
+    color: #333;
+}
+
+.invoice-info {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #f5f5f5;
+}
+
+.invoice-total {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+

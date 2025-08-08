@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Burn Chiken</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        
+        <header>
+            <!-- navigation -->
+            <nav class="nav_container">
+                <!-- logo -->
+                 <div class="logo">
+                    <img src="image/Burnt_Chicken.jpg" alt="Logo" />
+                 </div>
+                
+                <!-- navigation list -->
+                <ul class="nav_list">
+                    <li><a href="index.html">Home</a></li>
+                    <!-- drop list -->
+                    <li>
+                        <a href="menu.html">Menu </a>
+                    </li>
+                    <li><a href="Sale.html">Sale</a></li>
+                </ul>
+                <!-- login and signup buttons -->
+                <div class="login_signup" id="navUser">
+                    <!-- Nội dung sẽ được thay đổi bằng JS -->
+                </div>
+                    </nav>
+                    <!-- User Icon -->
+
+        </header>
+        <!-- Introduce nav -->
+        <div class="main-banner">
+            <div style="position:relative;width:100%;height:100%;min-height:220px;">
+                <img src="image/Main.png" alt="Main Banner" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.10);z-index:1;" />
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;">
+                    <div style="padding:24px 36px;border-radius:14px;margin-top:32px;max-width:90%;text-align:center;background:transparent;">
+                        <h1 style="color:#fff;font-size:2.2rem;font-weight:bold;margin-bottom:12px;letter-spacing:1px;">Crispy Fried Chicken</h1>
+                        <p style="color:#fff;font-size:1.3rem;margin:0;">Home Delivery In 30 Minutes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recommend-list" style="margin-top:120px;">
+            <h1>Recommend</h1>
+            <div class="recommend-card">
+                <img src="image/Sale20.jpg" alt="Sale" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3> Sale 20%</h3>
+                <p> Click now to receive discount voucher</p>
+                <a href="menu.html" class="recommend-btn">Order</a>
+            </div>
+            <div class="recommend-card">
+                <img src="image/Buy1free1.jpg" alt="Sale" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Buy 1 get 1 free</h3>
+                <p>Save when you buy</p>
+                <a href="menu.html" class="recommend-btn">Order</a>
+            </div>
+            <div class="recommend-card">
+                <img src="image/specialset1.jpg" alt="Special Set 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Special set 1</h3>
+       
+                <a href="menu.html" class="recommend-btn">Order</a>
+            </div>
+            <div class="recommend-card">
+                <img src="image/specialset2.jpg" alt="Special Set 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h3>Special set 2</h3>
+             
+                <a href="menu.html" class="recommend-btn">Order</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-content">
+                    <span class="footer-logo"> <b>Burnt Chicken</b></span>
+                    <span class="footer-copy">&copy; 2025 Burnt Chicken.</span>
+                    <span class="footer-social">
+                        <a href="#" title="Facebook" aria-label="Facebook">Facebook</a> |
+                        <a href="#" title="Instagram" aria-label="Instagram">Instagram</a> |
+                        <a href="#" title="Twitter" aria-label="Twitter">Twitter</a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+        <script>
+    function renderNavUser() {
+        var navUser = document.getElementById('navUser');
+        var username = localStorage.getItem('username');
+        if (username) {
+            navUser.innerHTML = `
+                <span style="font-weight:bold;cursor:pointer;" id="logoutUser">Hello, ${username}</span>
+                <a href="profile.html" title="Profile" style="margin-left:8px;vertical-align:middle;">
+                    <img src="image/Useicon.png" alt="Profile" style="width:30px;height:30px;vertical-align:middle;" />
+                </a>
+                <a href="ShoppingCart.html" title="Cart" style="margin-left:8px;">
+                    <img src="image/ShoppingCart.jpg" alt="Cart" style="width:30px;height:30px;vertical-align:middle;" />
+                </a>
+            `;
+        } else {
+            navUser.innerHTML = `
+                <a href="login.html" class="login-link">Login</a>
+                <a href="signup.html" class="signup-link">Sign Up</a>
+            `;
+        }
+    }
+    renderNavUser();
+    document.getElementById('navUser').addEventListener('click', function(e) {
+        if (e.target && e.target.id === 'logoutUser') {
+            if (confirm('Bạn có muốn đăng xuất không?')) {
+                localStorage.removeItem('username');
+                renderNavUser();
+            }
+        }
+    });
+</script>
+        
+    </body>
+</html>

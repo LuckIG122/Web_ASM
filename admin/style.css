@@ -1,0 +1,176 @@
+/* Custom CSS - Đây là phần CSS tùy chỉnh chính */
+body {
+    background: #fff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* --- Main Theme Colors --- */
+:root {
+    --primary-color: #4f46e5; /* Indigo */
+    --secondary-color: #10b981; /* Emerald */
+    --background-color: #f0f2f5;
+    --card-background: #ffffff;
+    --text-color-dark: #1f2937;
+    --text-color-light: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+/* --- Navigation Link Styling --- */
+.nav-link {
+    color: #ff9800;
+    border-bottom: 2px solid transparent;
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+}
+.nav-link.active, .nav-link:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #ff9800 0%, #ffd600 100%);
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid #ffd600;
+}
+
+/* --- Card Styling --- */
+.custom-card {
+    background: #fffbe6;
+    border: 1px solid #ffd600;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(255, 152, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--border-color);
+}
+.custom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+}
+.custom-card-header {
+    background: linear-gradient(90deg, #ff9800 0%, #ffd600 100%);
+    color: #fff;
+    border-radius: 12px 12px 0 0;
+    padding: 16px 24px;
+}
+.custom-card-title {
+    color: #fff;
+    font-weight: 700;
+}
+.custom-card-body {
+    padding: 1.5rem;
+}
+
+/* --- Button Styling --- */
+.custom-btn {
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+.custom-btn-primary {
+    background: linear-gradient(90deg, #ff9800 0%, #ffd600 100%);
+    color: #fff;
+    border: none;
+}
+.custom-btn-primary:hover {
+    background: #ffd600;
+    color: #ff9800;
+}
+.custom-btn-secondary {
+    background: #ff9800;
+    color: #fff;
+    border: none;
+}
+.custom-btn-secondary:hover {
+    background: #ffd600;
+    color: #ff9800;
+}
+.custom-btn-danger {
+    background-color: #ef4444; /* Red */
+    color: white;
+}
+.custom-btn-danger:hover {
+    background-color: #dc2626; /* Darker Red */
+}
+.custom-btn-outline {
+    background: #fff;
+    color: #ff9800;
+    border: 2px solid #ff9800;
+}
+.custom-btn-outline:hover {
+    background: #ff9800;
+    color: #fff;
+}
+
+/* --- Table Styling --- */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.custom-table th, .custom-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color-dark);
+}
+.custom-table th {
+    font-weight: 600;
+    background-color: #f9fafb;
+    color: var(--text-color-light);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+.custom-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status-active {
+    background-color: #dcfce7; /* Green light */
+    color: #166534; /* Green dark */
+}
+.status-low {
+    background-color: #fee2e2; /* Red light */
+    color: #991b1b; /* Red dark */
+}
+
+/* ...existing code... */
+.form-label {
+    color: #ff9800;
+    font-weight: 500;
+}
+.form-input, .form-select, .form-textarea {
+    border: 1px solid #ffd600;
+    background: #fff;
+    color: #ff9800;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 0 2px #ffd60033;
+}
+
+/* File upload area */
+.border-dashed {
+    border-color: #ffd600 !important;
+    background: #fffbe6;
+}
+.text-indigo-600, .hover\:text-indigo-500:hover {
+    color: #ff9800 !important;
+}
+
+/* SVG icon color */
+.text-gray-400 {
+    color: #ff9800 !important;
+}
+
+/* Price $ sign */
+.text-gray-500 {
+    color: #ff9800 !important;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Burnt Chicken</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <header>
+        <nav class="nav_container">
+            <div class="logo">
+                <img src="image/Burnt_Chicken.jpg" alt="Logo" />
+            </div>
+            <ul class="nav_list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="Sale.html">Sale</a></li>
+            </ul>
+            <div class="login_signup" id="navUser">
+                <!-- Nội dung sẽ được thay đổi bằng JS -->
+            </div>
+        </nav>
+    </header>
+    
+    <div class="recommend-list" style="margin-top:120px; display: flex; flex-direction: column; align-items: flex-start;">
+        <h1>Menu</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/fried chicken.jpg" alt="fried chicken" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>25,000₫</h4>
+                <p>Fried chicken</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Fried chicken', price: 20000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo2.jpg" alt="Fried chicken with sauce" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>30,000₫</h4>
+                <p>Fried chicken with sauce</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Fried chicken with sauce', price: 25000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/combo3.jpg" alt="Spaghetti" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>20,000₫</h4>
+                <p>Spaghetti</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Spaghetti', price: 30000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/hamburger.jpg" alt="Hamburger" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>20,000₫</h4>
+                <p>Hamburger</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Hamburger', price: 35000})">Order</button>
+            </div>
+        </div>
+        <h1>Drink</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/coca.jpg" alt="Coca" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>15,000₫</h4>
+                <p>Coca</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Coca', price: 15000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/pesi.jpg" alt="Pesi" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>15,000₫</h4>
+                <p>Pesi</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Pesi', price: 15000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/sprite.jpg" alt="Sprite" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>15,000₫</h4>
+                <p>Sprite</p>
+                <button class="recommend-btn" onclick="addToCart({name: 'Sprite', price: 15000})">Order</button>
+            </div>
+            <div class="recommend-card" style="margin: 12px auto;">
+                <img src="image/7up.jpg" alt="7up" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+                <h4>15,000₫</h4>
+                <p>7up</p>
+                <button class="recommend-btn" onclick="addToCart({name: '7up', price: 15000})">Order</button>
+            </div>
+        </div>
+        <h1>Combo</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
+            <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/combo1.jpg" alt="Combo 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Set 1</h3>
+            <h4>100,000₫</h4>
+            <p>Traditional fried chicken</p>
+            <a href="Set1.html" class="recommend-btn">Order</a>
+        </div>
+        <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/combo2.jpg" alt="Combo 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Set 2</h3>
+            <h4>120,000₫</h4>
+            <p>Fried chicken with a variety of sauces</p>
+            <a href="Set2.html" class="recommend-btn">Order</a>
+        </div>
+        <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/combo3.jpg" alt="Combo 3" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Set 3</h3>
+            <h4>130,000₫</h4>
+            <p>Chicken + French fries</p>
+            <a href="Set3.html" class="recommend-btn">Order</a>
+        </div>
+        <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/combo4.jpg" alt="Combo 4" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Set 4</h3>
+            <h4>140,000₫</h4>
+            <p>Chicken + Spicy noodles</p>
+            <a href="Set4.html" class="recommend-btn">Order</a>
+        </div>
+        <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/combo5.jpg" alt="Combo 5" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Set 5</h3>
+            <h4>120,000₫</h4>
+            <p>Chicken + Spaghetti</p>
+            <a href="Set5.html" class="recommend-btn">Order</a>
+        </div>
+        </div>
+        <h1>Special Sets</h1>
+        <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 24px;">
+            <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/specialset1.jpg" alt="Special Set 1" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Special set 1</h3>
+            <p>Chicken + French fries + Spaghetti</p>
+            <a href="Specialset1.html" class="recommend-btn">Order</a>
+        </div>
+        <div class="recommend-card" style="margin: 12px auto;">
+            <img src="image/specialset2.jpg" alt="Special Set 2" class="recommend-img" style="width:100%;height:auto;max-height:140px;object-fit:cover;margin-bottom:8px;" />
+            <h3>Special set 2</h3>
+            <p>Chicken + French fries + Noodles</p>
+            <a href="Specialset2.html" class="recommend-btn">Order</a>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <span class="footer-logo"> <b>Burnt Chicken</b></span>
+                <span class="footer-copy">&copy; 2025 Burnt Chicken.</span>
+                <span class="footer-social">
+                    <a href="#" title="Facebook" aria-label="Facebook">Facebook</a> |
+                    <a href="#" title="Instagram" aria-label="Instagram">Instagram</a> |
+                    <a href="#" title="Twitter" aria-label="Twitter">Twitter</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function renderNavUser() {
+            var navUser = document.getElementById('navUser');
+            var username = localStorage.getItem('username');
+            if (username) {
+                navUser.innerHTML = `
+                    <span style="font-weight:bold;cursor:pointer;" id="logoutUser">Hello, ${username}</span>
+                    <a href="profile.html" title="Profile" style="margin-left:8px;vertical-align:middle;">
+                        <img src="image/Useicon.png" alt="Profile" style="width:30px;height:30px;vertical-align:middle;" />
+                    </a>
+                    <a href="ShoppingCart.html" title="Cart" style="margin-left:8px;">
+                        <img src="image/ShoppingCart.jpg" alt="Cart" style="width:30px;height:30px;vertical-align:middle;" />
+                    </a>
+                `;
+            } else {
+                navUser.innerHTML = `
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="signup.html" class="signup-link">Sign Up</a>
+                `;
+            }
+        }
+        renderNavUser();
+        document.getElementById('navUser').addEventListener('click', function(e) {
+            if (e.target && e.target.id === 'logoutUser') {
+                if (confirm('Bạn có muốn đăng xuất không?')) {
+                    localStorage.removeItem('username');
+                    renderNavUser();
+                }
+            }
+        });
+
+        // Thêm hàm addToCart để lưu món vào localStorage
+        function addToCart(item) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Kiểm tra nếu món đã có thì tăng số lượng, chưa có thì thêm mới
+            let found = cart.find(i => i.name === item.name);
+            if (found) {
+                found.quantity = (found.quantity || 1) + 1;
+            } else {
+                item.quantity = 1;
+                cart.push(item);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Added to cart!');
+        }
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

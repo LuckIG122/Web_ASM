@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Fried Chicken Management</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Admin Panel</h1>
+                    <p class="text-gray-500 mt-1">Welcome back, Admin!</p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="custom-btn custom-btn-primary">
+                        <span class="material-symbols-outlined">notifications</span>
+                        Notifications
+                    </button>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div class="border-b border-gray-200">
+                 <nav class="flex -mb-px">
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="material-symbols-outlined mr-2">dashboard</span>
+                        Dashboard
+                    </a>
+                    <a href="crud.html" class="nav-link active">
+                        <span class="material-symbols-outlined mr-2">inventory_2</span>
+                        Fried Chicken Management
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="custom-card mb-6">
+                <div class="custom-card-header flex justify-between items-center">
+                    <h3 class="custom-card-title">Fried Chicken List</h3>
+                    <a href="add_product.html" class="custom-btn custom-btn-secondary">
+                        <span class="material-symbols-outlined text-sm">add</span>
+                        Add Product
+                    </a>
+                </div>
+                <div class="custom-card-body overflow-x-auto">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Chicken Dish</th>
+                                <th>Product Code</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Fried Chicken Row -->
+                            <tr>
+                                <td class="flex items-center gap-3">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWEdxAnOzmsrVeBNa8Grz8uhm8ijPGUgV-AZC5BMfZkV_GNvBT" alt="Fried Chicken" class="product-image">
+                                    <span class="font-semibold">Fried Chicken</span>
+                                </td>
+                                <td>GA001</td>
+                                <td>Fried Chicken</td>
+                                <td>₫45,000</td>
+                                <td>120</td>
+                                <td><span class="status-badge status-active">In Stock</span></td>
+                                <td class="flex gap-2">
+                                    <button class="custom-btn-outline p-2" title="Edit"><span class="material-symbols-outlined text-lg">edit</span></button>
+                                    <button class="custom-btn-danger p-2" title="Delete"><span class="material-symbols-outlined text-lg">delete</span></button>
+                                </td>
+                            </tr>
+                            <!-- Fried Chicken with Sauce Row -->
+                            <tr>
+                                <td class="flex items-center gap-3">
+                                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTsJrN9oPS-EPMEaQeu3aGqXjcN9_scFNb5m98Nfv8PZy6u4YuU" alt="Fried Chicken with Sauce" class="product-image">
+                                    <span class="font-semibold">Fried Chicken with Sauce</span>
+                                </td>
+                                <td>GA002</td>
+                                <td>Fried Chicken with Sauce</td>
+                                <td>₫55,000</td>
+                                <td>8</td>
+                                <td><span class="status-badge status-low">Low Stock</span></td>
+                                <td class="flex gap-2">
+                                    <button class="custom-btn-outline p-2" title="Edit"><span class="material-symbols-outlined text-lg">edit</span></button>
+                                    <button class="custom-btn-danger p-2" title="Delete"><span class="material-symbols-outlined text-lg">delete</span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Top Selling Products Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Top Selling Chicken Dishes</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="topSellingChart"></canvas>
+                    </div>
+                </div>
+                <!-- Inventory Levels Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Chicken Inventory Levels</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="inventoryLevelsChart"></canvas>
+                    </div>
+                </div>
+                <!-- Conversion Rate by Product Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Order Rate by Category</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="conversionRateChart"></canvas>
+                    </div>
+                </div>
+                <!-- Product Ratings Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Chicken Dish Ratings Distribution</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="productRatingsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Custom JS -->
+    <script src="crud.js"></script>
+</body>
+</html>
+</html>

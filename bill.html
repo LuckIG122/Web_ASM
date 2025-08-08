@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill - Burnt Chicken</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="nav_container">
+            <div class="logo">
+                <img src="image/Burnt_Chicken.jpg" alt="Logo" />
+            </div>
+            <ul class="nav_list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="Sale.html">Sale</a></li>
+            </ul>
+            <div class="login_signup" id="navUser">
+                <!-- JS will render user info -->
+            </div>
+        </nav>
+    </header>
+    <main style="max-width:700px;margin:40px auto 0 auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <h1 style="margin-top:20px;text-align:center;">Your Bill</h1>
+        <div id="bill-info" style="margin-bottom:24px;">
+            <!-- Bill info will be rendered here -->
+        </div>
+        <div style="text-align:center;margin-top:24px;">
+            <button 
+                onclick="window.print()" 
+                style="background:#ff9800;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;margin-right:12px;">
+                Print Bill
+            </button>
+            <button 
+                onclick="window.location.href='index.html'" 
+                style="background:#ff9800;color:#fff;border:none;padding:8px 18px;border-radius:5px;cursor:pointer;">
+                Back to Home
+            </button>
+        </div>
+    </main>
+    <footer style="position:fixed;left:0;right:0;bottom:0;width:100%;z-index:10;">
+        <div class="footer-container">
+            <div class="footer-content">
+                <span class="footer-logo"> <b>Burnt Chicken</b></span>
+                <span class="footer-copy">&copy; 2025 Burnt Chicken.</span>
+                <span class="footer-social">
+                    <a href="#" title="Facebook" aria-label="Facebook">Facebook</a> |
+                    <a href="#" title="Instagram" aria-label="Instagram">Instagram</a> |
+                    <a href="#" title="Twitter" aria-label="Twitter">Twitter</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Render user info
+        function renderNavUser() {
+            var navUser = document.getElementById('navUser');
+            var username = localStorage.getItem('username');
+            if (username) {
+                navUser.innerHTML = `<span style="font-weight:bold;">Hello, ${username}</span>`;
+            } else {
+                navUser.innerHTML = `
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="signup.html" class="signup-link">Sign Up</a>
+                `;
+            }
+        }
+        renderNavUser();
+
+        // Render bill
+        function renderBill() {
+            // Ưu tiên đọc từ sessionStorage.billCart (từ Checkout), fallback sang localStorage.cart
+            let cart = [];
+            if (sessionStorage.getItem('billCart')) {
+                cart = JSON.parse(sessionStorage.getItem('billCart'));
+            } else if (localStorage.getItem('cart')) {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            }
+            let billInfo = document.getElementById('bill-info');
+            if (!cart || cart.length === 0) {
+                billInfo.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+            let html = '<table style="width:100%;border-collapse:collapse;margin-bottom:16px;"><tr><th>Item</th><th style="text-align:center;">Price</th><th style="text-align:center;">Quantity</th><th style="text-align:center;">Subtotal</th></tr>';
+            let total = 0;
+            cart.forEach(item => {
+                let sub = item.price * item.quantity;
+                total += sub;
+                html += `<tr>
+                    <td>${item.name}</td>
+                    <td style="text-align:center;">${item.price.toLocaleString()}₫</td>
+                    <td style="text-align:center;">${item.quantity}</td>
+                    <td style="text-align:center;">${sub.toLocaleString()}₫</td>
+                </tr>`;
+            });
+            html += `<tr>
+                <td colspan="3" style="text-align:right;font-weight:bold; padding-top:20px; margin-top:20px;">Total:</td>
+                <td style="font-weight:bold; padding-top:20px; margin-top:20px;">${total.toLocaleString()}₫</td>
+            </tr>`;
+            html += '</table>';
+            // Optional: show customer info if available
+            let username = localStorage.getItem('username');
+            if (username) {
+                html += `<div style="margin-bottom:8px;"><b>Customer:</b> ${username}</div>`;
+            }
+            html += `<div style="font-size:1.1em;">Thank you for your order!</div>`;
+            billInfo.innerHTML = html;
+        }
+        renderBill();
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Admin Panel</h1>
+                    <p class="text-gray-500 mt-1">Welcome back, Admin!</p>
+                </div>
+                <div class="mt-4 sm:mt-0">
+                    <button class="custom-btn custom-btn-primary">
+                        <span class="material-symbols-outlined">notifications</span>
+                        Notifications
+                    </button>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div class="border-b border-gray-200">
+                <nav class="flex -mb-px">
+                    <a href="dashboard.html" class="nav-link active">
+                        <span class="material-symbols-outlined mr-2">dashboard</span>
+                        Dashboard
+                    </a>
+                    <a href="crud.html" class="nav-link">
+                        <span class="material-symbols-outlined mr-2">inventory_2</span>
+                        Fried Chicken Management
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <!-- Stat Cards -->
+                <div class="custom-card p-6 flex items-center gap-4">
+                    <div class="bg-yellow-100 p-3 rounded-full"><span class="material-symbols-outlined" style="color:#ff9800;">payments</span></div>
+                    <div>
+                        <p class="text-sm text-gray-500">Total Revenue</p>
+                        <p class="text-2xl font-bold text-gray-800">₫777,000,000</p>
+                    </div>
+                </div>
+                <div class="custom-card p-6 flex items-center gap-4">
+                    <div class="bg-orange-100 p-3 rounded-full"><span class="material-symbols-outlined" style="color:#ff9800;">shopping_cart</span></div>
+                    <div>
+                        <p class="text-sm text-gray-500">New Fried Chicken Orders</p>
+                        <p class="text-2xl font-bold text-gray-800">512</p>
+                    </div>
+                </div>
+                <div class="custom-card p-6 flex items-center gap-4">
+                    <div class="bg-amber-100 p-3 rounded-full"><span class="material-symbols-outlined" style="color:#ff9800;">group</span></div>
+                    <div>
+                        <p class="text-sm text-gray-500">New Customers</p>
+                        <p class="text-2xl font-bold text-gray-800">52</p>
+                    </div>
+                </div>
+                <div class="custom-card p-6 flex items-center gap-4">
+                    <div class="bg-rose-100 p-3 rounded-full"><span class="material-symbols-outlined text-rose-600">trending_up</span></div>
+                    <div>
+                        <p class="text-sm text-gray-500">Order Rate</p>
+                        <p class="text-2xl font-bold text-gray-800">12.5%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Monthly Revenue Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Monthly Revenue</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="monthlyRevenueChart"></canvas>
+                    </div>
+                </div>
+                <!-- Product Category Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">Chicken Categories</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="productCategoryChart"></canvas>
+                    </div>
+                </div>
+                <!-- New Orders Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">New Fried Chicken Orders (Last 30 Days)</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="newOrdersChart"></canvas>
+                    </div>
+                </div>
+                <!-- New Customers Chart -->
+                <div class="custom-card">
+                    <div class="custom-card-header">
+                        <h3 class="custom-card-title">New Customers (Last 30 Days)</h3>
+                    </div>
+                    <div class="custom-card-body">
+                        <canvas id="newCustomersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Custom JS -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
